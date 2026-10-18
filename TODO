@@ -1,0 +1,38 @@
+## Setup
+- [ ] conda env created, torch import works
+- [ ] repo initialised, .gitignore, environment.yml, first commit
+- [ ] config.py dataclass with all parameters
+
+## Phase A: simulation + benchmark
+- [ ] sim.py: vectorised GBM, shape (n_paths, N+1), seeded
+- [ ] bs.py: price and delta in torch
+- [ ] pnl.py: P&L with transaction costs and delta_{-1}=0 convention
+- [ ] check: BS-delta P&L mean ≈ 0, std ~ 1/sqrt(N) for N in {10, 30, 100}
+- [ ] commit: "Simulator, BS benchmark, P&L"
+
+## Phase B: model
+- [ ] model.py: shared MLP, inputs (tau, log S/K, prev delta)
+- [ ] rollout over time steps producing (n_paths, N) hedges
+- [ ] check: shapes correct, no look-ahead
+- [ ] commit
+
+## Phase C: training
+- [ ] quadratic loss, Adam, fresh paths per iteration
+- [ ] fixed test set + BS reference line in logs
+- [ ] check: c=0 converges close to BS benchmark
+- [ ] CVaR loss with learnable w
+- [ ] save model weights to outputs/
+- [ ] commit
+
+## Phase D: evaluation
+- [ ] plot: learned hedge vs BS delta at 3 maturities
+- [ ] plot: P&L histograms
+- [ ] retrain with c in {0.001, 0.005}; table of mean/std/CVaR vs BS
+- [ ] plot: no-trade band (delta_k vs delta_{k-1})
+- [ ] README with results and figures
+- [ ] commit + push
+
+## Stretch
+- [ ] learnable premium (indifference price)
+- [ ] Heston dynamics
+- [ ] recurrent policy
