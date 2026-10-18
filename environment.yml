@@ -1,0 +1,6 @@
+name: deephedge
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+prefix: /home/filippo/miniconda3/envs/deephedge
