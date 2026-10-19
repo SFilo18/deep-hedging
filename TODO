@@ -1,10 +1,10 @@
 ## Setup
-- [ ] conda env created, torch import works
-- [ ] repo initialised, .gitignore, environment.yml, first commit
-- [ ] config.py dataclass with all parameters
+- [v] conda env created, torch import works
+- [v] repo initialised, .gitignore, environment.yml, first commit
+- [v] config.py dataclass with all parameters
 
 ## Phase A: simulation + benchmark
-- [ ] sim.py: vectorised GBM, shape (n_paths, N+1), seeded
+- [v] sim.py: vectorised GBM, shape (n_paths, N+1), seeded
 - [ ] bs.py: price and delta in torch
 - [ ] pnl.py: P&L with transaction costs and delta_{-1}=0 convention
 - [ ] check: BS-delta P&L mean ≈ 0, std ~ 1/sqrt(N) for N in {10, 30, 100}
