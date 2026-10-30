@@ -1,8 +1,6 @@
 import torch
 import math
 
-import config
-
 def gbm(cfg, n_paths, generator=None):
 
     rands = torch.randn(n_paths, cfg.N, device = cfg.device, dtype= cfg.dtype, generator = generator)
